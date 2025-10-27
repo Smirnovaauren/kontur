@@ -1,0 +1,86 @@
+//- Главная страница
+section.hero
+  +container('hero__container')
+    .hero__content
+      h1.hero__title Школа программирования
+      p.hero__subtitle
+        | для тех, кому нужны реальные навыки,
+        br
+        | а не просто сертификат
+      p.hero__desc Пройдите тестирование, чтобы получить доступ к бесплатным вводным урокам
+      a.hero__btn.button.button--primary(href='#') Заказать звонок
+
+section.features
+  +container('features__container')
+    h2.features__title Обучение в CoDe — это удобно и результативно
+    ul.features__list
+      each feature in [
+        {
+          title: 'Огромное количество практики',
+          text: 'Более 500 самостоятельных заданий и 20 полноценных больших проектов'
+        },
+        {
+          title: 'Современные методики обучения',
+          text: 'Спиральное обучение: на каждом витке вы узнаете что-то новое об уже знакомых вещах'
+        },
+        {
+          title: 'Простое и понятное изложение',
+          text: 'Вместо заумных терминов – примеры из реального мира'
+        },
+        {
+          title: 'Гибкий график занятий',
+          text: 'Учитесь в любое время и в удобном для вас темпе'
+        },
+        {
+          title: 'Прямая связь с опытными программистами',
+          text: 'Задавайте вопросы и отправляйте свой код на проверку'
+        },
+        {
+          title: 'Гибкая оплата частями',
+          text: 'Платите только за тот материал, который изучаете прямо сейчас, а не за весь курс сразу'
+        },
+        {
+          title: 'Быстрый и лёгкий возврат',
+          text: 'Если передумаете учиться — вернём деньги за 3 рабочих дня'
+        }
+      ]
+        li.features__item
+          h3.features__name= feature.title
+          p.features__text= feature.text
+
+section.method
+  +container('method__container')
+    h2.method__title Методика обучения
+    p.method__text
+      | Весь учебный материал структурирован по принципу&nbsp;
+      b «спирального обучения»
+      | . Сначала вы получаете базовые знания, а затем на каждом витке спирали углубляетесь в изученные темы, доводя их понимание до совершенства. Такой подход упрощает обучение и гарантирует, что вы не пропустите ничего важного.
+
+section.support
+  +container('support__container')
+    h2.support__title Помощь и поддержка
+    p.support__text Если в процессе обучения возникнут сложности, вы всегда сможете задать вопрос своему наставнику.
+    p.support__text
+      | Раз в несколько уроков вы будете получать большое задание, которое нужно будет сдавать на проверку код-ревьюеру. Он внимательно изучит ваш код, найдёт ошибки и поможет вам стать лучше.
+
+section.callback
+  +container('callback__container')
+    h2.callback__title Закажите звонок
+    p.callback__desc и наш специалист свяжется с вами в ближайшее время
+    form.callback__form.form(action='#', method='post')
+      .form__group
+        label.form__label(for='name') Имя
+        input.form__input(type='text', id='name', name='name', placeholder='Ваше имя')
+      .form__group
+        label.form__label(for='phone') Телефон
+        input.form__input(type='tel', id='phone', name='phone', placeholder='+7 ХХХ - ХХХ - ХХ - ХХ')
+      .form__group
+        label.form__label(for='email') Email
+        input.form__input(type='email', id='email', name='email', placeholder='mail@site.com')
+      .form__group
+        label.form__label(for='message') Сообщение
+        textarea.form__textarea(id='message', name='message', placeholder='Ваше сообщение...')
+      label.form__agreement
+        input.form__checkbox(type='checkbox', required)
+        span.form__text Нажимая кнопку “Отправить”, соглашаюсь с политикой конфиденциальности
+      button.form__btn.button.button--primary(type='submit') Отправить

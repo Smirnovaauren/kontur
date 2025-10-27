@@ -1,0 +1,13 @@
+/* Forms placeholder */
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form__input,
+.form__textarea {
+  padding: 0.75rem;
+  border: 1px solid #dcdcdc;
+  border-radius: 0.5rem;
+}

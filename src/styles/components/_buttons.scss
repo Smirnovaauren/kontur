@@ -1,0 +1,15 @@
+/* Buttons placeholder */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button--primary {
+  background-color: #ff6f3c;
+  color: #ffffff;
+}
