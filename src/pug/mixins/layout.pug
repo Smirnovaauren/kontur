@@ -1,7 +1,9 @@
 mixin section(name, modifiers = '', attrs = {})
-  section(class=[name, modifiers].filter(Boolean).join(' '))(&attributes(attrs))
+  - const classes = [name, modifiers].filter(Boolean).join(' ')
+  section(class=classes)&attributes(attrs)
     block
 
 mixin container(modifier = '')
-  .container(class=modifier)
+  - const classes = ['container', modifier].filter(Boolean).join(' ')
+  div(class=classes)
     block
