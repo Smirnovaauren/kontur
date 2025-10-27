@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Школа программирования CoDe</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+<header class="header">
+  <div class="header__container container">
+    <div class="header__logo logo">
+      <span class="logo__text">Co<span class="logo__accent">De</span></span>
+    </div>
+    <nav class="header__nav nav">
+      <ul class="nav__list">
+        <li class="nav__item"><a href="#" class="nav__link">Чему вы научитесь</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">Процесс обучения</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">Стоимость</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="header__contacts">
+      <a href="tel:+74993489396" class="header__phone">+7 (499) 348-93-96</a>
+      <a href="#" class="header__btn button button--primary">Регистрация</a>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__container container">
+      <div class="hero__content">
+        <h1 class="hero__title">Школа программирования</h1>
+        <p class="hero__subtitle">
+          для тех, кому нужны реальные навыки, <br />
+          а не просто сертификат
+        </p>
+        <p class="hero__desc">
+          Пройдите тестирование, чтобы получить доступ к бесплатным вводным урокам
+        </p>
+        <a href="#" class="hero__btn button button--primary">Заказать звонок</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="features__container container">
+      <h2 class="features__title">Обучение в CoDe — это удобно и результативно</h2>
+      <ul class="features__list">
+        <li class="features__item">
+          <h3 class="features__name">Огромное количество практики</h3>
+          <p class="features__text">
+            Более 500 самостоятельных заданий и 20 полноценных больших проектов
+          </p>
+        </li>
+        <li class="features__item">
+          <h3 class="features__name">Современные методики обучения</h3>
+          <p class="features__text">
+            Спиральное обучение: на каждом витке вы узнаете что-то новое об уже знакомых вещах
+          </p>
+        </li>
+        <li class="features__item">
+          <h3 class="features__name">Простое и понятное изложение</h3>
+          <p class="features__text">
+            Вместо заумных терминов – примеры из реального мира
+          </p>
+        </li>
+        <li class="features__item">
+          <h3 class="features__name">Гибкий график занятий</h3>
+          <p class="features__text">
+            Учитесь в любое время и в удобном для вас темпе
+          </p>
+        </li>
+        <li class="features__item">
+          <h3 class="features__name">Прямая связь с опытными программистами</h3>
+          <p class="features__text">
+            Задавайте вопросы и отправляйте свой код на проверку
+          </p>
+        </li>
+        <li class="features__item">
+          <h3 class="features__name">Гибкая оплата частями</h3>
+          <p class="features__text">
+            Платите только за тот материал, который изучаете прямо сейчас, а не за весь курс сразу
+          </p>
+        </li>
+        <li class="features__item">
+          <h3 class="features__name">Быстрый и лёгкий возврат</h3>
+          <p class="features__text">
+            Если передумаете учиться — вернём деньги за 3 рабочих дня
+          </p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- METHOD -->
+  <section class="method">
+    <div class="method__container container">
+      <h2 class="method__title">Методика обучения</h2>
+      <p class="method__text">
+        Весь учебный материал структурирован по принципу <b>«спирального обучения»</b>.
+        Сначала вы получаете базовые знания, а затем на каждом витке спирали
+        углубляетесь в изученные темы, доводя их понимание до совершенства.
+        Такой подход упрощает обучение и гарантирует, что вы не пропустите ничего важного.
+      </p>
+    </div>
+  </section>
+
+  <!-- SUPPORT -->
+  <section class="support">
+    <div class="support__container container">
+      <h2 class="support__title">Помощь и поддержка</h2>
+      <p class="support__text">
+        Если в процессе обучения возникнут сложности, вы всегда сможете задать вопрос своему наставнику.
+      </p>
+      <p class="support__text">
+        Раз в несколько уроков вы будете получать большое задание, которое нужно будет сдавать на проверку
+        код-ревьюеру. Он внимательно изучит ваш код, найдёт ошибки и поможет вам стать лучше.
+      </p>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="callback">
+    <div class="callback__container container">
+      <h2 class="callback__title">Закажите звонок</h2>
+      <p class="callback__desc">и наш специалист свяжется с вами в ближайшее время</p>
+
+      <form class="callback__form form" action="#" method="post">
+        <div class="form__group">
+          <label class="form__label" for="name">Имя</label>
+          <input class="form__input" type="text" id="name" name="name" placeholder="Ваше имя" />
+        </div>
+
+        <div class="form__group">
+          <label class="form__label" for="phone">Телефон</label>
+          <input
+                  class="form__input"
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="+7 ХХХ - ХХХ - ХХ - ХХ"
+          />
+        </div>
+
+        <div class="form__group">
+          <label class="form__label" for="email">Email</label>
+          <input
+                  class="form__input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="mail@site.com"
+          />
+        </div>
+
+        <div class="form__group">
+          <label class="form__label" for="message">Сообщение</label>
+          <textarea
+                  class="form__textarea"
+                  id="message"
+                  name="message"
+                  placeholder="Ваше сообщение..."
+          ></textarea>
+        </div>
+
+        <label class="form__agreement">
+          <input class="form__checkbox" type="checkbox" required />
+          <span class="form__text">
+                Нажимая кнопку “Отправить”, соглашаюсь с политикой конфиденциальности
+              </span>
+        </label>
+
+        <button type="submit" class="form__btn button button--primary">Отправить</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__container container">
+    <div class="footer__info">
+      <a href="mailto:info@code.ru" class="footer__email">info@code.ru</a>
+      <a href="tel:+79999999999" class="footer__phone">+7 (999) 999-99-99</a>
+    </div>
+    <div class="footer__links">
+      <a href="#" class="footer__link">Пользовательское соглашение</a>
+      <a href="#" class="footer__link">Политика конфиденциальности</a>
+    </div>
+    <div class="footer__copy">© 2021 — Все права защищены</div>
+  </div>
+</footer>
+</body>
+</html>

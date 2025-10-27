@@ -1,0 +1,10 @@
+# node_modules и билд
+node_modules/
+dist/
+build/
+
+# временные файлы
+*.log
+.DS_Store
+.idea/
+.vscode/

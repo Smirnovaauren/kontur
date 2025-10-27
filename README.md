@@ -1,0 +1,1 @@
+npm install -D sharp vite-imagetools vite-plugin-html pug

@@ -1,0 +1,262 @@
+/* ===== CSS variables (colors only) ===== */
+:root {
+  --color-bg: #f9f8fd;
+  --color-block-bg: #eaf2f5;
+  --color-text: #22253b;
+  --color-muted: #8e8e8e;
+
+  --color-primary: #f15525;
+  --color-primary-ink: #ffffff;
+
+  --color-border: #e5e7eb;
+  --color-hr :#d8d8d8;
+  --color-link: #38bff2;
+  --color-link-hover: #f15525;
+
+  --shadow-1: 0 8px 24px rgba(0, 0, 0, .08);
+}
+
+/* ===== SCSS tokens (layout/spacing/typography) ===== */
+$desktop: 1400px;
+$gutter: 27px;
+$radius: 30px;
+
+$bp-lg: 1200px;
+$bp-md: 1024px;
+$bp-sm: 768px;
+$bp-xs: 480px;
+
+/* ===== Base ===== */
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  min-width: 320px; /* мобильный минимум */
+  font: 13px/1.15 system-ui, -apple-system, Gilroy, Arial, sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--color-link); text-decoration: none; }
+a:hover { color: var(--color-link-hover); text-decoration: underline; }
+
+.container {
+  width: min(100% - 2 * $gutter, $desktop);
+  margin-inline: auto;
+}
+
+/* ===== Utilities ===== */
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0);
+  white-space: nowrap; border: 0;
+}
+
+.button {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 0.75rem 1.25rem;
+  border-radius: $radius;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  transition: .2s ease;
+  &--primary {
+    background: var(--color-primary);
+    color: var(--color-primary-ink);
+  }
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-1);
+    text-decoration: none;
+    background: var(--color-link);
+
+  }
+}
+
+/* ===== Header ===== */
+.header {
+  padding-block: 16px;
+  border-bottom: 1px solid var(--color-border);
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: $gutter;
+  }
+
+  &__logo .logo__text {
+    font-weight: 800; font-size: 20px; letter-spacing: .2px;
+  }
+  .logo__accent { color: var(--color-primary); }
+
+  &__contacts {
+    display: flex; align-items: center; gap: 12px;
+    .header__phone { color: var(--color-text); font-weight: 600; white-space: nowrap; }
+  }
+}
+
+.nav {
+  &__list { display: flex; gap: 20px; padding: 0; margin: 0; list-style: none; }
+  &__link { color: var(--color-text); }
+  &__link:hover { color: var(--color-primary); text-decoration: none; }
+}
+
+@media (max-width: $bp-sm) {
+  .header__container {
+    grid-template-columns: 1fr;
+    row-gap: 12px;
+  }
+  .nav__list { flex-wrap: wrap; gap: 12px; }
+  .header__contacts { justify-content: flex-start; flex-wrap: wrap; }
+}
+
+/* ===== Hero ===== */
+.hero {
+  padding-block: clamp(32px, 6vw, 72px);
+
+  &__title {
+    font-size: clamp(28px, 3.2vw + 8px, 44px);
+    margin: 0 0 12px 0;
+  }
+  &__subtitle {
+    margin: 0 0 16px 0;
+    color: var(--color-text);
+  }
+  &__desc {
+    margin: 0 0 24px 0;
+    color: var(--color-muted);
+  }
+}
+
+/* ===== Features ===== */
+.features {
+  padding-block: clamp(32px, 6vw, 72px);
+  &__title {
+    margin: 0 0 24px 0;
+    font-size: clamp(22px, 2vw + 10px, 32px);
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $gutter;
+    padding: 0; margin: 0; list-style: none;
+  }
+  &__item {
+    padding: 20px;
+    border: 1px solid var(--color-border);
+    border-radius: $radius;
+    background: var(--color-bg);
+  }
+  &__name {
+    margin: 0 0 8px 0;
+    font-weight: 700; font-size: 18px;
+  }
+  &__text { margin: 0; color: var(--color-muted); }
+}
+
+@media (max-width: $bp-md) {
+  .features__list { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: $bp-xs) {
+  .features__list { grid-template-columns: 1fr; }
+}
+
+/* ===== Method ===== */
+.method {
+  padding-block: clamp(32px, 6vw, 72px);
+  &__title {
+    margin: 0 0 12px 0;
+    font-size: clamp(22px, 2vw + 10px, 30px);
+  }
+  &__text {
+    margin: 0;
+    color: var(--color-text);
+    p { margin: 0 0 12px 0; }
+    b { font-weight: 700; }
+  }
+}
+
+/* ===== Support ===== */
+.support {
+  padding-block: clamp(32px, 6vw, 72px);
+  &__title {
+    margin: 0 0 12px 0;
+    font-size: clamp(22px, 2vw + 10px, 30px);
+  }
+  &__text { margin: 0 0 10px 0; color: var(--color-text); }
+}
+
+/* ===== Callback (Form) ===== */
+.callback {
+  padding-block: clamp(32px, 6vw, 72px);
+
+  &__title { margin: 0 0 8px 0; font-size: clamp(22px, 2vw + 10px, 30px); }
+  &__desc  { margin: 0 0 20px 0; color: var(--color-muted); }
+
+  &__form { max-width: 720px;}
+}
+
+.form {
+  &__group { margin: 0 0 16px 0; }
+  &__label { display: inline-block; margin: 0 0 6px 0; font-weight: 600; }
+  &__input,
+  &__textarea {
+    width: 100%;
+    border: 1px solid var(--color-border);
+    border-radius: $radius;
+    background: var(--color-bg);
+    color: var(--color-text);
+    padding: 12px 14px;
+    outline: none;
+    transition: border-color .15s ease;
+    &::placeholder { color: var(--color-muted); }
+    &:focus { border-color: var(--color-primary); }
+  }
+  &__textarea { min-height: 120px; resize: vertical; }
+
+  &__agreement {
+    display: flex; align-items: flex-start; gap: 10px;
+    margin: 8px 0 16px;
+  }
+  &__checkbox {
+    margin-top: 2px; inline-size: 18px; block-size: 18px;
+  }
+  &__text { color: var(--color-muted); }
+
+  &__btn { /* .button styles already applied */ }
+}
+
+/* ===== Footer ===== */
+.footer {
+  margin-top: clamp(24px, 4vw, 48px);
+  padding-block: 20px;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-muted);
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: $gutter;
+  }
+  &__email, &__phone { color: var(--color-text); margin-right: 16px; }
+  &__links {
+    display: flex; gap: 16px;
+    .footer__link { color: var(--color-muted); }
+    .footer__link:hover { color: var(--color-text); text-decoration: none; }
+  }
+  &__copy { white-space: nowrap; }
+}
+
+@media (max-width: $bp-sm) {
+  .footer__container {
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+  }
+}
+
+/* ===== Optional: Small polish for forms on tiny screens ===== */
+@media (max-width: $bp-xs) {
+  .form__agreement { align-items: center; }
+}
