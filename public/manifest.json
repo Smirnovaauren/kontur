@@ -1,0 +1,8 @@
+{
+  "name": "Kontur App",
+  "short_name": "Kontur",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "description": "Placeholder manifest for the Kontur project"
+}

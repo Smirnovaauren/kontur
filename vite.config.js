@@ -16,14 +16,19 @@ export default defineConfig({
             minify: true,
             pages: [
                 {
-                    entry: 'src/main.js',
+                    entry: 'src/scripts/main.js',
                     template: 'index.pug',
                     filename: 'index.html',
                 },
                 {
-                    entry: 'src/main.js',
-                    template: 'src/pug/about.pug',
+                    entry: 'src/scripts/main.js',
+                    template: 'about.pug',
                     filename: 'about.html',
+                },
+                {
+                    entry: 'src/scripts/main.js',
+                    template: 'contact.pug',
+                    filename: 'contact.html',
                 }
             ]
         })
@@ -36,7 +41,8 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 main: resolve(__dirname, 'index.html'),
-                about: resolve(__dirname, 'about.html')
+                about: resolve(__dirname, 'about.html'),
+                contact: resolve(__dirname, 'contact.html')
             }
         }
     }

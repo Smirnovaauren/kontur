@@ -1,0 +1,9 @@
+extends ./base.pug
+
+include ../mixins/layout.pug
+
+block body
+  include ../partials/header.pug
+  main.main
+    block content
+  include ../partials/footer.pug

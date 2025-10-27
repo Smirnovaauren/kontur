@@ -1,0 +1,3 @@
+mixin picture(src, alt, attrs = {})
+  picture(&attributes(attrs))
+    img(src=src, alt=alt, loading='lazy')
