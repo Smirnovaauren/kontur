@@ -1,7 +1,7 @@
-import '../styles/main.scss'
-import { loadImage } from './modules/image-loader.js'
-import { registerAnimations } from './modules/animations.js'
-import { validateForm } from './modules/form-validator.js'
+import './styles/main.scss'
+import { loadImage } from './scripts/modules/image-loader.js'
+import { registerAnimations } from './scripts/modules/animations.js'
+import { validateForm } from './scripts/modules/form-validator.js'
 
 registerAnimations()
 
