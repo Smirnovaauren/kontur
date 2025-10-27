@@ -13,7 +13,9 @@ export default defineConfig({
             })
         }),
         pugPlugin({
-            pretty: process.env.NODE_ENV !== 'production'
+            pretty: process.env.NODE_ENV !== 'production',
+            compileDebug: false,
+            basedir: resolve(__dirname)
         })
     ],
 
