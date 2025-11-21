@@ -4,6 +4,7 @@ import pugPlugin from 'vite-plugin-pug'
 import { resolve } from 'path'
 
 export default defineConfig({
+    base: '',
     plugins: [
         pugPlugin({
             pretty: process.env.NODE_ENV !== 'production',
@@ -15,7 +16,6 @@ export default defineConfig({
     css: {
         preprocessorOptions: {
             scss: {
-                //additionalData: `@use "@/styles/utils/variables" as *;\n`
             }
         }
     },
@@ -37,7 +37,18 @@ export default defineConfig({
         outDir: resolve(__dirname, 'dist'),
         emptyOutDir: true,
         rollupOptions: {
-            input: resolve(__dirname, 'index.html')
+            input: resolve(__dirname, 'index.html'),
+            output: {
+                assetFileNames: (assetInfo) => {
+                    const isCssAsset = assetInfo.names?.some((name) => name.endsWith('.css'))
+
+                    if (isCssAsset) {
+                        return 'styles/[name]-[hash][extname]'
+                    }
+
+                    return 'assets/[name]-[hash][extname]'
+                }
+            }
         }
     },
 
