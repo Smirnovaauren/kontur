@@ -1,17 +1,10 @@
 // vite.config.js
 import { defineConfig } from 'vite'
-import { imagetools } from 'vite-imagetools'
 import pugPlugin from 'vite-plugin-pug'
 import { resolve } from 'path'
 
 export default defineConfig({
     plugins: [
-        imagetools({
-            defaultDirectives: new URLSearchParams({
-                format: 'webp;jpg',
-                quality: '80'
-            })
-        }),
         pugPlugin({
             pretty: process.env.NODE_ENV !== 'production',
             compileDebug: false,
@@ -30,7 +23,7 @@ export default defineConfig({
     resolve: {
         alias: {
             '@': resolve(__dirname, 'src'),
-            '@images': resolve(__dirname, 'src/assets/images'),
+            '@images': resolve(__dirname, 'public/images'),
             '@styles': resolve(__dirname, 'src/styles'),
             '@pug': resolve(__dirname, 'src/pug')
         }
